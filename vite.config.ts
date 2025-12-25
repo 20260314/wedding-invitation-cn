@@ -15,7 +15,7 @@ import {
 const distFolder = "build"
 
 export default defineConfig({
-  base: "/wedding-invitation/",
+  base: "/wedding-invitation-cn/",
 
   plugins: [
     react(),
