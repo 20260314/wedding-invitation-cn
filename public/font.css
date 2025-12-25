@@ -1,0 +1,62 @@
+@font-face {
+  font-family: "MapoGoldenPier";
+  src: url("./MapoGoldenPierA.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Allura";
+  src: url("./AlluraRegular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Tsar";
+  src: url("./fonts/tsar.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TsarR";
+  src: url("./fonts/tsarR.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "CaslonCP";
+  src: url("./fonts/CaslonCP.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Glamore";
+  src: url("./fonts/Glamore.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PretendardR";
+  src: url("./fonts/Pretendard-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Eulyoo";
+  src: url("./fonts/Eulyoo1945-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "BookkL";
+  src: url("./fonts/BookkMyunjo-Lt.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}

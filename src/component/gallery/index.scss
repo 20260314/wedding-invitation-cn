@@ -1,0 +1,296 @@
+$gallery-width: 21rem;
+$gallery-height: 30rem;
+$transition-duration: 0.3s;
+
+@keyframes moving-right {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc($gallery-width - 100%));
+  }
+}
+
+.gallery {
+  .carousel-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .carousel {
+      width: $gallery-width;
+      overflow: hidden;
+      position: relative;
+      z-index: 3;
+
+      .carousel-list {
+        display: flex;
+        width: fit-content;
+        justify-content: center;
+
+        &.transitioning {
+          transition: $transition-duration ease-out;
+        }
+
+        &.moving-left {
+          animation-name: moving-right;
+          animation-duration: $transition-duration;
+          animation-fill-mode: forwards;
+          animation-direction: reverse;
+        }
+
+        &.moving-right {
+          animation-name: moving-right;
+          animation-duration: $transition-duration;
+          animation-fill-mode: forwards;
+        }
+
+        .carousel-item {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: $gallery-width;
+          height: $gallery-height;
+          padding-left: 0.5rem;
+          padding-right: 0.5rem;
+          img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+          }
+        }
+      }
+
+      .carousel-control {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .control {
+          height: 100%;
+          width: 30%;
+          display: flex;
+          align-items: center;
+          &.left {
+            justify-content: flex-start;
+          }
+          &.right {
+            justify-content: flex-end;
+          }
+
+          .arrow {
+            width: 2rem;
+            &.right {
+              transform: rotate(180deg);
+            }
+          }
+        }
+      }
+    }
+
+    .carousel-indicator {
+      display: flex;
+      justify-content: center;
+      margin-top: 3rem;
+
+      .indicator {
+        width: 1rem;
+        height: 1rem;
+        padding: 0.2rem;
+        &::before {
+          content: "";
+          display: block;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          background-color: var(--dark-grey-color);
+        }
+        position: relative;
+        z-index: 3;
+
+        &.active {
+          &::before {
+            background-color: var(--dark-color);
+          }
+        }
+      }
+    }
+  }
+}
+
+.all-photo-modal {
+  width: 22rem;
+  .header {
+    .title {
+      text-align: center;
+      font-size: 1.2rem;
+      color: var(--theme-color);
+      padding-bottom: 1rem;
+    }
+  }
+
+  .content {
+    padding: 0 0.7rem 0.7rem 0.7rem;
+    .photo-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-rows: 12rem;
+      gap: 0.5rem;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .footer {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+//여기서부터 지피티가 준거임
+
+.instagram-gallery {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.1rem; //사진 간격 흰색테두리
+    margin-top: 2rem;
+
+    .thumb {
+      width: 100%;
+      padding-top: 110%; 
+      position: relative;
+      cursor: pointer;
+
+      img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 0; //사진 라운드부분
+      }
+    }
+  }
+
+  //그라데이션 영역//
+  .more-wrapper {
+    position: relative;
+    width: 100%;
+    margin-top: -3rem;
+    padding-top: 3.5rem;
+    text-align: center;
+
+    .fade {
+      position: absolute;
+      top: 0; //그라데이션 시작 높이조절
+      left: 0;
+      width: 100%;
+      height: 3rem;
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 0%
+       // rgba(255, 255, 255, 1) 100%
+      );
+    }
+
+    //더보기 버튼//
+    .more-btn {
+      padding: 0.5rem 0;
+      background: none;
+      border: none;
+      margin-top: 1rem;
+      color: var(--dark-color);
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+  }
+
+  //버튼 그림 크기수정//
+  .more-btn img.more-arrow {
+  width: 0.9rem;
+  height: 0.9rem;
+  margin-left: 0.3rem;
+  vertical-align: middle;
+}
+
+  .less-btn {
+    margin-top: 1.2rem;
+    padding: 0.5rem;
+    background: none;
+    border: none;
+    color: var(--dark-color);
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+}
+
+ .less-btn img.less-arrow {
+  width: 0.9rem;
+  height: 0.9rem;
+  margin-left: 0.3rem;
+  vertical-align: middle;
+}
+
+/* 모달 내부 큰 이미지 보기 */
+.photo-view-modal {
+  .photo-view {
+    width: 22rem;
+    img {
+      width: 100%;
+      height: auto;
+      border-radius: 0;
+    }
+  }
+}
+
+.instagram-gallery h2 {
+  margin-bottom: 1rem; // 타이틀 아래 여백
+}
+
+
+
+//지피티가 준 좌우 버튼 코드
+.photo-view {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-large {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 10px;
+}
+
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.0);
+  border-radius: 999px;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+
+  &.left { left: 0px; }
+  &.right { right: 0px; }
+
+  .arrow {
+    width: 32px;
+    height: 32px;
+    color: var(--title-color);
+  }
+
+  .arrow.right {
+    transform: rotate(180deg);
+  }
+}

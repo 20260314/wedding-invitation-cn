@@ -1,0 +1,303 @@
+@use "./component/cover";
+@use "./component/invitation";
+@use "./component/button";
+@use "./component/gallery";
+@use "./component/location";
+@use "./component/information";
+@use "./component/modal";
+@use "./component/shareButton";
+
+:root {
+  --theme-color: #33691e; //진한초록
+  --theme-bg-color: #f7f6f2; //이전=f2ede6
+  --beige-color: #f7f7f7; //레드 라인 베이지
+  --alt-color: #77a36c; //중간초록
+  --alt-bg-color: #f4f0f0; //연핑크
+  --dark-color: #282c34; //진한 네이비그레이
+  --dark-grey-color: #d2d2d2; //멜란지그레이
+  --light-grey-color: #eaeaea; //밝은 그레이
+  --light-color: #ffffff; //미색, 흰색과 구별이 어려운 연그레이 #fcfcfc / #f9f9f9
+  --white-color: #ffffff;
+  --red-color: #ff0000;
+  --black-color: #000000;
+  --title-color: #b0acac;  //#b8b2b2 //#c9c4c3
+
+
+  font-family: "Eulyoo";
+  font-size: clamp(16px, 4vw, 18px);
+  
+
+}
+
+@media print {
+  body {
+    print-color-adjust: exact;
+  }
+}
+
+$colors: (
+  theme-color: var(--theme-color),
+  theme-bg-color: var(--theme-bg-color),
+  alt-color: var(--alt-color),
+  alt-bg-color: var(--alt-bg-color),
+  dark-color: var(--dark-color),
+  dark-grey-color: var(--dark-grey-color),
+  light-grey-color: var(--light-grey-color),
+  light-color: var(--light-color),
+  white-color: var(--white-color),
+  red-color: var(--red-color),
+);
+
+@each $name, $color in $colors {
+  .text-#{$name} {
+    color: $color !important;
+  }
+  .bg-#{$name} {
+    background-color: $color !important;
+  }
+  .border-#{$name} {
+    border-color: $color !important;
+  }
+}
+
+@keyframes lazy-fade-in {
+  from {
+    opacity: 0;
+    z-index: 3;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    z-index: 3;
+    transform: translateY(0);
+  }
+}
+
+button {
+  font-family: "Eulyoo";
+  font-size: 1rem;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100vh;
+  &.modal-open {
+    overflow-y: hidden;
+  }
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  color: var(--dark-color);
+  user-select: none;
+}
+
+.background {
+  background-color: var(--theme-bg-color);
+  min-height: 100vh;
+  min-width: 100vw;
+
+  .card-view {
+    width: 980px;
+    margin: 0 auto;
+    padding-bottom: 0.5rem;
+    text-align: center;
+    background-color: var(--light-color);
+
+    @media (max-width: 980px) {
+      width: 500px;
+    }
+
+    @media (max-width: 500px) {
+      width: 100vw;
+    }
+
+    .card-group .card.cover-card {
+  padding: 0 !important;
+  border: none !important;
+  width: 100% !important;
+}
+
+    .card-group {
+      
+      position: relative;
+      @media (width > 980px) {
+        display: block;
+        flex-direction: column;
+        box-shadow: none;
+        margin: 0;
+        background-color: var(--light-color);
+
+        opacity: 0;
+        &.lazy-active {
+          animation-name: lazy-fade-in;
+          animation-duration: 3s;
+          opacity: 1;
+        }
+
+        @media print {
+          opacity: 1;
+          animation-name: inherit !important;
+          animation-duration: inherit !important;
+        }
+      }
+
+      .card {
+        background-color: var(--light-color);
+        padding: 1rem;
+        margin-bottom: 3rem;
+        border: 1px solid var(--light-grey-color);
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+
+        @media (max-width: 980px) {
+          box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.2);
+          margin: 0.5rem;
+          width: inherit;
+
+          opacity: 0;
+          &.lazy-active {
+            animation-name: lazy-fade-in;
+            animation-duration: 3s;
+            opacity: 1;
+          }
+
+          @media print {
+            opacity: 1;
+            animation-name: inherit !important;
+            animation-duration: inherit !important;
+          }
+        }
+      }
+    }
+
+    .footer {
+      position: relative;
+      background-color: var(--light-color);
+      box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.2);
+      margin: 0.5rem;
+      margin: 0.5rem;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      &.lazy-active {
+        animation-name: lazy-fade-in;
+        animation-duration: 3s;
+        opacity: 1;
+      }
+
+      @media print {
+        opacity: 1;
+        animation-name: inherit !important;
+        animation-duration: inherit !important;
+      }
+    }
+  }
+}
+
+h2 {
+  font-size: 0.9rem;
+  color: var(--title-color);
+  font-weight: normal;
+  &.english {
+    font-family: "TsarR";
+    letter-spacing: 0.1rem; //타이틀 자간설정 초기=0
+  }
+}
+
+div.break {
+  height: 1rem;
+}
+
+.title-kr {
+  margin-top: 0.5rem;   // 타이틀과 살짝 가까운 느낌
+  margin-bottom: 1.2rem; // 그리드와는 적당히 떨어지게
+  font-size: 1.1rem;
+  letter-spacing: 0.02em; // 자간
+  text-align: center;
+  color: var(--dark-color); 
+  opacity: 1;
+  font-family: "Eulyoo";
+}
+
+
+/* === 강제: 카드뷰 중앙 고정 & 한 줄 레이아웃으로 통일 === */
+.card-view {
+  /* 원하는 카드 전체 너비(예: 430px)로 고정하고 중앙 배치 */
+  width: 430px !important;
+  max-width: 100%;
+  margin: 0 auto !important;
+  box-sizing: border-box;
+}
+
+/* 카드 그룹(원래 왼/오 컬럼 역할)이 항상 블록으로 동작하도록 강제 */
+.card-group {
+  display: block !important;        /* flex(2열) 해제 */
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important; /* 흰 배경 제거 */
+  box-shadow: none !important;        /* 카드 그룹 쉐도우 제거 */
+  border: none !important;
+}
+
+/* 개별 카드들 간 경계(테두리/여백/쉐도우) 제거하고 카드 폭을 100%로 채움 */
+.card {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0.8rem 0.8rem !important; /* 필요하면 조정 */
+  padding-bottom: 6rem !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+/* 카드 내부에서 실제 콘텐츠(예: calendar, gallery 등)의 배경을 흰색으로 유지하고 싶다면
+   아래처럼 .card > .inner 같은 규칙을 적용(프로젝트 구조에 맞게 조정) */
+/*
+.card > .inner {
+  background: #fff;
+  padding: 1rem;
+  box-shadow: 0 0 0.2rem rgba(0,0,0,0.06);
+}
+*/
+
+/* 카드들 사이에 가는 선(구분선)이 보이면 제거 */
+.card + .card {
+  border-top: none !important;
+}
+
+/* 이미지/컨텐츠가 좌측에 몰려 보일 때 중앙 정렬 보정 */
+.background {
+  align-items: center; /* 이미 설정되어 있을텐데, 두 번 들어가도 안전 */
+}
+
+/* 모바일에서 카드가 너무 빡빡하면 여백 복원 */ //여기는 순수 모바일버전 여백조정임 pc는 반영안됨
+@media (max-width: 500px) {
+  .card-view {
+    width: 100vw !important;
+    padding: 0;
+  }
+  .card {
+    padding: 1rem !important;
+    padding-bottom: 3rem !important;
+  }
+  .card.cover {
+  padding: 0 !important;
+  }
+}
+
+.card.cover {
+  padding: 0 !important;
+}
