@@ -60,3 +60,10 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "Xiangcui";
+  src: url("./fonts/xiangcui.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
