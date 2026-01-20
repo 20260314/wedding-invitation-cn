@@ -115,7 +115,7 @@ export const Gallery = () => {
         <div className="more-wrapper">
           <div className="fade" />
           <button className="more-btn" onClick={() => setExpanded(true)}>
-            더보기 <img src={Arrowdown} alt="더보기" className="more-arrow" />
+            展开 <img src={Arrowdown} alt="더보기" className="more-arrow" />
           </button>
         </div>
       )}
@@ -123,7 +123,7 @@ export const Gallery = () => {
       {/* 접기 */}
       {expanded && (
         <button className="less-btn" onClick={() => setExpanded(false)}>
-          접기 <img src={Arrowup} alt="접기" className="less-arrow" />
+          收起 <img src={Arrowup} alt="접기" className="less-arrow" />
         </button>
       )}
     </LazyDiv>
