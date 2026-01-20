@@ -27,19 +27,13 @@
     margin-bottom:1.5rem;
   }
 
-  .names {
-    margin-top: 0.5rem;
-    margin-bottom: 0.8rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.7rem;
-    .divider {
-      background-color: var(--dark-color);
-      width: 1px;
-      height: 0.7rem;
-    }
-  }
+  .content {
+    font-size: 1rem;
+    font-family: "Xiangcui";
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+  }  
+  
   .info {
     margin-bottom: 4rem;
     opacity: 0.8;
