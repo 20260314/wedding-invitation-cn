@@ -7,23 +7,10 @@
 
 import {
   BRIDE_FULLNAME,
-  GROOM_FULLNAME,
-  LOCATION,
-  WEDDING_DATE,
-  WEDDING_DATE_FORMAT,
+
 } from "../../const"
 import { COVER_IMAGE } from "../../images"
 import { LazyDiv } from "../lazyDiv"
-
-const DAY_OF_WEEK = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-]
 
 export const Cover = () => {
   return (
@@ -33,7 +20,7 @@ export const Cover = () => {
       <div className="break" />
       </div>
       <div className="subtitle">Wedding Day</div>
-      <div className="info">{WEDDING_DATE.format(WEDDING_DATE_FORMAT)}</div>
+      <div className="content">2026年3月14日 星期六 上午11点</div>
     </LazyDiv>
   )
 }
