@@ -67,3 +67,10 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "Zhuque";
+  src: url("./fonts/ZhuqueFangsong-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
