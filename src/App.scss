@@ -230,6 +230,17 @@ div.break {
   font-family: "Eulyoo";
 }
 
+.title-cn {
+  margin-top: 0.5rem;   // 타이틀과 살짝 가까운 느낌
+  margin-bottom: 1.2rem; // 그리드와는 적당히 떨어지게
+  font-size: 1.1rem;
+  letter-spacing: 0.02em; // 자간
+  text-align: center;
+  color: var(--dark-color); 
+  opacity: 1;
+  font-family: "Xiangcui";
+}
+
 
 /* === 강제: 카드뷰 중앙 고정 & 한 줄 레이아웃으로 통일 === */
 .card-view {
