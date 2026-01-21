@@ -89,7 +89,7 @@ export const Gallery = () => {
   return (
     <LazyDiv className="card gallery instagram-gallery">
       <h2 className="english">Gallery</h2>
-      <p className="title-kr">갤러리</p>
+      <p className="title-cn">美好瞬间</p>
 
       {/* 썸네일 그리드 */}
       <div className={`grid ${expanded ? "expanded" : ""}`}>
