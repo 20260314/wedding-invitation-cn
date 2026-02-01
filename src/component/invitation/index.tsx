@@ -26,7 +26,7 @@ export const Invitation = () => {
 
       <div className="break" />
 
-      <div className="content">两个人相遇，</div>
+      <div className="content"> 两个人相遇，</div>
       <div className="content">开始描绘携手一生的未来。</div>
       <div className="content">今后，我们将彼此珍惜、相互依靠，</div>
       <div className="content">作为一个充满爱与温暖的家庭，</div>
