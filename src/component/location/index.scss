@@ -134,6 +134,7 @@
     color: var(--dark-color);
     line-height: 1.8rem;
     margin-bottom: 2.5rem;
+    font-family: "Zhuque";
   }
 
 
@@ -143,17 +144,20 @@
     margin-left: 10px;
     margin-bottom: 5rem; // 블럭 간 간격
     margin-top: 1rem;
+    font-family: "Zhuque";
 
     .heading {
       font-size: 1rem;
       color: var(--dark-color);
       margin-bottom: 0.5rem; // 소제목 아래 간격
       font-weight: 400;
+      font-family: "Zhuque";
     }
 
     .content {
       font-size: 0.9rem;
       line-height: 1.9;
+      font-family: "Zhuque";
     }
     .line {
   width: 100%;
