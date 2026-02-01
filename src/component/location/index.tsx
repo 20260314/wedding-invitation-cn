@@ -10,7 +10,7 @@ export const Location = () => {
       {/* --- 상단 주소 카드 --- */}
       <LazyDiv className="card location">
         <h2 className="english">Location</h2>
-        <p className="title-kr">오시는 길</p>
+        <p className="title-cn">温馨提示</p>
 
         <div className="addr">
           {LOCATION}
