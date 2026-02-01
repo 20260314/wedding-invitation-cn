@@ -26,16 +26,15 @@ export const Invitation = () => {
 
       <div className="break" />
 
-      <div className="content">诚挚地邀请您，</div>
-      <div className="content">与我们共同见证</div>
-      <div className="content">美好的幸福时刻。</div>
-      <div className="break" />
-      <div className="content">햇살이 뜨거울 땐 가려주고,</div>
-      <div className="content">비가 오면 우산이 되어주는</div>
-      <div className="content">부부가 되겠습니다.</div>
-      <div className="break" />
-      <div className="content">기쁜날 함께 하셔서</div>
-      <div className="content">저희의 앞날을 축복해 주세요.</div>
+      <div className="content">两个人相遇，</div>
+      <div className="content">开始描绘携手一生的未来。</div>
+      <div className="content">今后，我们将彼此珍惜、相互依靠，</div>
+      <div className="content">作为一个充满爱与温暖的家庭，</div>
+      <div className="content">一起走过人生的每一步。</div>
+        <div className="break" />
+      <div className="content">在这幸福的日子里，</div>
+      <div className="content">若能得到您的祝福与陪伴，</div>
+      <div className="content">将成为我们最珍贵的喜悦。</div>
 
       <div className="break" />
 
