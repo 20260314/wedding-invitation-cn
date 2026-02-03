@@ -1,6 +1,6 @@
 {
-  "short_name": "<%= GROOM_FULLNAME %> ❤️ <%= BRIDE_FULLNAME %> 결혼합니다.",
-  "name": "<%= GROOM_FULLNAME %> ❤️ <%= BRIDE_FULLNAME %> 결혼합니다.",
+  "short_name": "向您分享我们的婚迅",
+  "name": "向您分享我们的婚迅",
   "icons": [
     {
       "src": "favicon.ico",
