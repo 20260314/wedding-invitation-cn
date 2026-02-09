@@ -47,6 +47,11 @@ export const Location = () => {
             会议 ID: 823 6639 8235
             <br />
             密码: 0314
+            <br />
+            <br />
+            但也请您根据当地的实际情况，
+            <br />
+            妥善安排并谨慎出席。
           </div>
         </div>
       </LazyDiv>
