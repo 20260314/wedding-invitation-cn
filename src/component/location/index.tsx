@@ -44,7 +44,7 @@ export const Location = () => {
           <div className="heading">ZOOM</div>
           <div class="line"></div>
           <div className="content">
-            会议 ID: 823 6639 8235
+            会议 ID: 306 388 3010
             <br />
             密码: 0314
             <br />
